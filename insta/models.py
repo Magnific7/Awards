@@ -25,10 +25,10 @@ class Profile(models.Model):
     # def get_profile_by_id():
     #     cls.objects.filter(=id)
 
-    @classmethod
-    def search_by_user(cls,search_term):
-        user = cls.objects.filter(user__username__icontains=search_term)
-        return user
+    # @classmethod
+    # def search_by_user(cls,search_term):
+    #     user = cls.objects.filter(user__username__icontains=search_term)
+    #     return user
 
 
     # def get_comments(self, id):
@@ -72,7 +72,12 @@ class Image(models.Model):
     def delete_image(cls, id):
         pic = cls.objects.filter(pk=id)
         pic.delete()
-    
+
+    @classmethod
+    def search_project(cls,search_term):
+        name = cls.objects.filter(image_name__icontains=search_term)
+        return name
+
     @classmethod
     def update_image(self,update):
         self.image_caption = update

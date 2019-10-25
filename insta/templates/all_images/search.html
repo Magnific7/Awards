@@ -3,8 +3,8 @@
 <div class="container">
 
   <div class="row">
-    {% if users%}
-      <h2>Found {{ users|length }} of searched term {{message}}</h2>
+    {% if names%}
+      <h2>Found {{ names|length }} of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 users for the search term {{message}}</h2>
     {% endif %}
@@ -13,10 +13,10 @@
 
   <div class="row">
 
-  {% if users %}
-    {% for user in users %}
+    {% if names %}
+    {% for user in names %}
       <div class="col-sm-6 col-md-3">
-          <h3><a href="{% url 'profile' user.id %}">{{user.user.username}}</a></h3>
+          <h3><a href="{% url 'image' user.id %}">{{user.image_name}}</a></h3>
       </div>
     {% endfor %}
   {% endif %}

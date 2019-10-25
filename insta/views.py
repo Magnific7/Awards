@@ -12,17 +12,27 @@ def home(request):
     image_comments = Image.get_images()
     return render(request, 'all_images/home.html', {"images":images,"image_comments":image_comments})
 
+# def search_results(request):
+#     if 'user' in request.GET and request.GET['user']:
+#         search_term = request.GET.get('user')
+#         searched_user = Profile.search_by_user(search_term)
+#         message = f"{search_term}"
+
+#         return render(request, 'all_images/search.html', {"message":message,"users":searched_user})
+#     else:
+#         message = "You haven't searched for any term"
+#         return render(request, 'all_images/search.html', {"message":message})
+
 def search_results(request):
-    if 'user' in request.GET and request.GET['user']:
-        search_term = request.GET.get('user')
-        searched_user = Profile.search_by_user(search_term)
+    if 'name' in request.GET and request.GET['name']:
+        search_term = request.GET.get('name')
+        searched_project = Image.search_project(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all_images/search.html', {"message":message,"users":searched_user})
+        return render(request, 'all_images/search.html', {"message":message,"names":searched_project})
     else:
         message = "You haven't searched for any term"
         return render(request, 'all_images/search.html', {"message":message})
-
 def image(request,image_id):
     try:
         image = Image.objects.get(id = image_id)
