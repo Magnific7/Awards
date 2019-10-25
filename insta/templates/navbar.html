@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-        <ul class="nav nav-tabs" style="background-color: grey">
+<!-- <body style="background-image: url('https://i2.wp.com/bbbslubbock.org/wp-content/uploads/2018/10/grey-background-for-site-for-website-1432015867.jpg?ssl=1')"> -->
+        <ul class="nav nav-tabs" style="background-color:white ">
                 <li><a href="{% url 'home'%}">Home</a></li>
                 {% if user.is_authenticated %}
                 
@@ -21,8 +22,24 @@
                   <li style="float:right;margin-right: 10%;">
                     <a href="{%url 'profile' user.id %}">{{user.username}}<img src="../../static/images/profileee.png" alt="instagram logo on nav-bar " style="width:53px; height:30px;margin-top:5px;border-right:1px solid;padding-right: 23px; "></a>
                   </li>
+                  <li>
+                    <div>
+      
+                        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+                          <div class="input-group">
+                            <input type="text" style="background-color: white;color:white;" placeholder="Search " name="name">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" style="background-color: white;" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                          </div>
+                
+                        </form>
+                      </div>
+                </li>
+                
+
               </ul>
-            </li>
+           
           </ul>
           {% else %}
           <li>
@@ -30,20 +47,7 @@
           </li>
 
           {% endif %}
-          <li>
-              <div class="col-sm-4 col-md-4 navbar-right">
-
-                  <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search " name="name">
-                      <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                      </div>
-                    </div>
-          
-                  </form>
-                </div>
-          </li>
+        
         </div>
               </ul>
        

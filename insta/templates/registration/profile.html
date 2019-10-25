@@ -46,7 +46,7 @@
    {% for image in images%}
      <div class="col-md-4">                
           <div class="hovereffect thumbnail">
-                  <a href <img class="img-responsive" src="{{image.image.url}}" alt="">>
+            <a href="{% url 'image' image.id %}"><img class="img-responsive" src="{{image.image.url}}" alt=""></a>
          </div>
      </div>
    {%endfor%}
