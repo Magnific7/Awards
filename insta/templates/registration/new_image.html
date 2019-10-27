@@ -19,13 +19,13 @@
 
 <body>
   {% block content %}
-  <form  action="{%url 'new-image'%}" method="post" enctype="multipart/form-data">
+  <form  action="{%url 'new-image'%}" method="post" style="width:50%;margin-top: 5%;margin-left:20%;" class="col-xs-10" nctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}
     <input type="submit" class="btn btn-success btn-lg" value="Post">
   </form>
-     <p><a href="/">Home page</a></p>
+     <p><br><br><a href="/">Home page</a></p>
    {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %} {% endblock %}

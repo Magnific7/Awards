@@ -7,7 +7,7 @@
 </head>
 <body>
 <!-- <body style="background-image: url('https://i2.wp.com/bbbslubbock.org/wp-content/uploads/2018/10/grey-background-for-site-for-website-1432015867.jpg?ssl=1')"> -->
-        <ul class="nav nav-tabs" style="background-color:white ">
+        <ul class="nav nav-tabs" style="background-color:rgb(184, 174, 174);">
                 <li><a href="{% url 'home'%}">Home</a></li>
                 {% if user.is_authenticated %}
                 
@@ -16,14 +16,14 @@
                   <a href="{% url 'new-image'%}">Submit your site</a>
                 </li>
                
-                  <li style="float:right;margin-right: 5%">
+                  <li style="float:right;margin-right: 9%">
                     <a href="/logout">Logout</a>
                   </li>
-                  <li style="float:right;margin-right: 10%;">
+                  <li style="float:right;margin-left: 10%;">
                     <a href="{%url 'profile' user.id %}">{{user.username}}<img src="../../static/images/profileee.png" alt="instagram logo on nav-bar " style="width:53px; height:30px;margin-top:5px;border-right:1px solid;padding-right: 23px; "></a>
                   </li>
                   <li>
-                    <div>
+                    <div style="padding:10px;">
       
                         <form class="navbar-form" role="search" action="{% url 'search_results' %}">
                           <div class="input-group">

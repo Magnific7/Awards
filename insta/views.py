@@ -154,3 +154,8 @@ class ProjectList(APIView):
         all_project = Image.objects.all()
         serializers = ProjectSerializer(all_project, many=True)
         return Response(serializers.data)
+
+
+
+
+        #bug new images are not being saved
