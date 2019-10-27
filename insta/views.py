@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 from .models import Image,Profile,Follow,Comments
 from .forms import NewImageForm, UpdatebioForm,CommentForm
 from django.contrib.auth.decorators import login_required
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer,ProjectSerializer
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -139,3 +142,15 @@ def likes(request,id):
     image.like = image.like+1
     image.save()    
     return redirect("home")
+
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_project = Image.objects.all()
+        serializers = ProjectSerializer(all_project, many=True)
+        return Response(serializers.data)
