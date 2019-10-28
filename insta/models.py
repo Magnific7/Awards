@@ -107,5 +107,7 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.comment
-
+    
+    def save_comment(self):
+        self.save()
 
