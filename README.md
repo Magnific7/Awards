@@ -5,3 +5,4 @@ Adjango App that allows users to post their projects and get reviews and rating 
 ## User Stories
 These are the behaviours/features that the application implements for use by a user.
 Users would like to:
+* View posted projects and their details
