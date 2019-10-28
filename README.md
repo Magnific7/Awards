@@ -7,3 +7,4 @@ These are the behaviours/features that the application implements for use by a u
 Users would like to:
 * View posted projects and their details
 * Post a project to be rated/reviewed
+* Search for projects 
