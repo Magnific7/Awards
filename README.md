@@ -10,3 +10,4 @@ Users would like to:
 * Search for projects 
 * View my profile page
 ## Admin Abilities
+* Sign in to the the app
