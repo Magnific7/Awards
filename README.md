@@ -14,3 +14,5 @@ Users would like to:
 * Delete posts
 * Update post details.
 * Create new images for showcasing
+## SetUp / Installation Requirements
+### Prerequisites
