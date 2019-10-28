@@ -35,8 +35,8 @@ class Profile(models.Model):
     #     comments = Comments.objects.filter(image_id = id)
     #     return comments
 class Follow(models.Model):
-    following = models.ForeignKey(User, related_name='following')
-    follower = models.ForeignKey(User, related_name='follower')
+    following = models.ForeignKey(User, related_name='following', on_delete=models.CASCADE)
+    follower = models.ForeignKey(User, related_name='follower', on_delete=models.CASCADE)
 
     def __str__(self):
         return '{} follows {}'.format(self.following,self.follower)
@@ -50,7 +50,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to ='pictures/', )
     image_name = models.CharField(max_length =50)
     image_caption = models.TextField()
-    profile = models.ForeignKey(Profile)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     like = models.IntegerField(default=0)
     link = models.URLField(max_length=150,db_index=True,unique=True,null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank =True)

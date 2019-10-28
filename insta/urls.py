@@ -13,8 +13,8 @@ urlpatterns=[
     url(r'^comment/(\d+)/$', views.comment, name='comment'),
     url(r'^profile/(\d+)', views.profile, name='profile'),
     url(r'^likes/(?P<id>\d+)',views.likes,name ='like'),
-    url(r'^api/profile/$', views.ProfileList.as_view()),
-    url(r'^api/project/$', views.ProjectList.as_view())
+    url(r'^api/profile/$', views.ProfileList.as_view(), name='proapi'),
+    url(r'^api/project/$', views.ProjectList.as_view(), name='projectapi')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

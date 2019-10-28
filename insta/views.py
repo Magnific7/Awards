@@ -52,11 +52,13 @@ def new_image(request):
     if request.method == 'POST':
         form = NewImageForm(request.POST, request.FILES)
         if form.is_valid():
+            print('hhhhhhhhhhhhh')
             image = form.save(commit=False)
             image.user = current_user
+            print(current_user)
             image.profile = current_user.profile
             image.save()
-        return redirect('home')
+            return redirect('home')
 
     else:
         form = NewImageForm()
