@@ -9,3 +9,4 @@ Users would like to:
 * Post a project to be rated/reviewed
 * Search for projects 
 * View my profile page
+## Admin Abilities
