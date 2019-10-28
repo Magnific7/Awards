@@ -11,3 +11,5 @@ Users would like to:
 * View my profile page
 ## Admin Abilities
 * Sign in to the the app
+* Delete images
+* Update image post details.
