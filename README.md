@@ -20,3 +20,7 @@ Users would like to:
 * pip
 * virtualenv
 * Requirements.txt
+## Testing the Application
+* To run the tests for the class files:
+
+        $ python3.6 manage.py test 
