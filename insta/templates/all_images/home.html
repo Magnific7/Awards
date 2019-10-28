@@ -1,4 +1,7 @@
 {%extends 'all_images/base.html'%}
+{% load bootstrap3 %}
+ {% load staticfiles %}
+
 {% block content %} 
 {{ block.super}}
 
@@ -7,12 +10,19 @@
                 <div class="row">
                         <div style="display:flex;justify-content:space-evenly;">
                         {% for image in images %}
-                        <div>
-                                        <a href="{% url 'profile' image.user.id %}"><h5 class="card-header">{{image.user.username}}</h5></a>
-                                        <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive  card-body" alt="Image" style="width: 250px;height:260px;margin-top:15px;"></a>
-                                        <!-- <a href="{% url 'like' image.id %}">{{image.likes}}<i class="fa fa-heart" style="color:rgb(165, 58, 58);"></i></a> -->
-                        </div>
+                  
                         
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="hovereffect">
+                                            <img class="img-responsive" src="{{image.image.url}}" alt="" style="width: 300px;height:260px;margin-top:15px;">
+                                            <div class="overlay">
+                                               <h2>{{image.image_name}}</h2>
+                                               <a class="info" href="{% url 'image' image.id %}">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                         {% for com in i.comment_set.all %}
                         <span><p><strong>{{current_user.username}}:</strong>{{com.comment}}</p></span>
                       </div>
@@ -26,4 +36,7 @@
                 </div>
                 </div> 
         </div> 
+{% endblock %}
+{% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
 {% endblock %}
