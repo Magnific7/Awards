@@ -8,3 +8,4 @@ Users would like to:
 * View posted projects and their details
 * Post a project to be rated/reviewed
 * Search for projects 
+* View my profile page
