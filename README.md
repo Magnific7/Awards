@@ -16,3 +16,7 @@ Users would like to:
 * Create new images for showcasing
 ## SetUp / Installation Requirements
 ### Prerequisites
+* python3.6
+* pip
+* virtualenv
+* Requirements.txt
