@@ -28,3 +28,6 @@ Users would like to:
 * Python3.6
 * Javascript
 * Django and postgresql
+## License
+
+Copyright (c) 2019 Magnific
